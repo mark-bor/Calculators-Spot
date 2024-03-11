@@ -1,0 +1,55 @@
+<main class="main pythagorean-theorem">
+    <h1 class="title">Percent</h1>
+
+    <p class="formula">
+        <span>100% = {{ a }}</span>
+        <span>{{ b }}% = {{ x }}</span>
+    </p>
+
+    <div class="input-fields">
+        <label for="a">
+            <input
+                id="a"
+                class="input"
+                type="number"
+                name="a"
+                placeholder="a"
+                [value]="a"
+                (input)="setA($event)"
+            >
+        </label>
+        <label for="b">
+            <input
+                id="b"
+                class="input"
+                type="number"
+                name="b"
+                placeholder="b"
+                [value]="b"
+                (input)="setB($event)"
+            >
+        </label>
+        <label for="x">
+            <input
+                id="x"
+                class="input"
+                type="number"
+                name="x"
+                placeholder="x"
+                [value]="x"
+                (input)="setX($event)"
+            >
+        </label>
+    </div>
+
+    <div class="buttons">
+        <button 
+            class="button reset"
+            (click)="reset()"
+        >Reset</button>
+        <button 
+            class="button calculate"
+            (click)="calculate()"
+        >Calculate</button>
+    </div>
+</main>
