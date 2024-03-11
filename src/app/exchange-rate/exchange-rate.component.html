@@ -1,0 +1,70 @@
+<main class="main exchange-rate">
+    <h1 class="title">Exchange Rate</h1>
+
+    <div class="providers">
+        @for (p of providers; track p) {
+            <label [for]="p" class="provider">
+                <input 
+                    [id]="p"
+                    class="input-provider"
+                    type="radio"
+                    name="provider"
+                    [value]="p"
+                    [checked]="p===provider"
+                    (change)="setProvider($event)"
+                />
+                <span>{{ p }}</span>
+            </label>
+        }
+    </div>
+
+    <div class="select-container">
+        <select 
+            id="currency1"
+            class="currency"
+            name="currency"
+            (change)="setCurrency1($event)"
+        >
+            @for (c of currencies; track c) {
+                <option 
+                    [value]="c"
+                    [selected]="c===currency1"
+                >{{ c }}</option>
+            }
+        </select>
+
+        <input 
+            id="amount1"
+            class="amount"
+            type="number"
+            name="amount"
+            [value]="amount1"
+            (input)="setAmout1($event)"
+        />
+    </div>
+
+    <div class="select-container">
+        <select
+            id="currency2"
+            class="currency"
+            name="currency"
+            (change)="setCurrency2($event)"
+        >
+            @for (c of currencies; track c) {
+                <option 
+                    [value]="c"
+                    [selected]="c===currency2"
+                >{{ c }}</option>
+            }
+        </select>
+
+        <input 
+            id="amount2"
+            class="amount"
+            type="number"
+            name="amount"
+            [value]="amount2"
+            (input)="setAmout2($event)"
+        />
+    </div>
+</main>

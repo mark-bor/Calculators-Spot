@@ -1,0 +1,53 @@
+.exchange-rate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.providers {
+    width: 236px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    display: inline-flex;
+    flex-direction: column;
+
+    .provider {
+        height: 24px;
+        display: inline-flex;
+        align-items: center;
+        column-gap: 5px;
+
+        // .input-provider {
+        // }
+
+        span {
+            line-height: 1.2em;
+        }
+    }
+}
+
+.select-container {
+    height: 26px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    
+    .currency {
+        height: 100%;
+        outline: none;
+    }
+
+    .amount {
+        // width: 100px;
+        height: 100%;
+        outline: none;
+        text-align: center;
+    }
+}
