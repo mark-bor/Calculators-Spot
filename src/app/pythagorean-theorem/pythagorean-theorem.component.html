@@ -1,0 +1,52 @@
+<main class="main pythagorean-theorem">
+    <h1 class="title">Pythagorean Theorem</h1>
+
+    <p class="formula">{{a}}<sup>2</sup> + {{b}}<sup>2</sup> = {{c}}<sup>2</sup></p>
+
+    <div class="input-fields">
+        <label for="a">
+            <input
+                id="a"
+                class="input"
+                type="number"
+                name="a"
+                placeholder="a"
+                [value]="a"
+                (input)="setA($event)"
+            >
+        </label>
+        <label for="b">
+            <input
+                id="b"
+                class="input"
+                type="number"
+                name="b"
+                placeholder="b"
+                [value]="b"
+                (input)="setB($event)"
+            >
+        </label>
+        <label for="c">
+            <input
+                id="c"
+                class="input"
+                type="number"
+                name="c"
+                placeholder="c"
+                [value]="c"
+                (input)="setC($event)"
+            >
+        </label>
+    </div>
+
+    <div class="buttons">
+        <button 
+            class="button reset"
+            (click)="reset()"
+        >Reset</button>
+        <button 
+            class="button calculate"
+            (click)="calculate()"
+        >Calculate</button>
+    </div>
+</main>
