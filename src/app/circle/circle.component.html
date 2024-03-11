@@ -1,0 +1,76 @@
+<main class="main pythagorean-theorem">
+    <h1 class="title">Circle</h1>
+
+    <div class="circle-data">
+        <div class="circle">
+            <span class="center"></span>
+            <p class="radius">
+                <span>{{ R }}</span>
+            </p>
+            <p class="diameter">
+                <span>{{ D }}</span>
+            </p>
+            <span class="circumference">{{ C }}</span>
+        </div>
+        
+        <p class="circle-area">S = {{ S }}</p>
+    </div>
+
+    <div class="input-fields">
+        <label for="R">
+            <input
+                id="R"
+                class="input"
+                type="number"
+                name="R"
+                placeholder="R"
+                [value]="R"
+                (input)="setR($event)"
+            >
+        </label>
+        <label for="D">
+            <input
+                id="D"
+                class="input"
+                type="number"
+                name="D"
+                placeholder="D"
+                [value]="D"
+                (input)="setD($event)"
+            >
+        </label>
+        <label for="C">
+            <input
+                id="C"
+                class="input"
+                type="number"
+                name="C"
+                placeholder="C"
+                [value]="C"
+                (input)="setC($event)"
+            >
+        </label>
+        <label for="S">
+            <input
+                id="S"
+                class="input"
+                type="number"
+                name="S"
+                placeholder="S"
+                [value]="S"
+                (input)="setS($event)"
+            >
+        </label>
+    </div>
+
+    <div class="buttons">
+        <button 
+            class="button reset"
+            (click)="reset()"
+        >Reset</button>
+        <button 
+            class="button calculate"
+            (click)="calculate()"
+        >Calculate</button>
+    </div>
+</main>
