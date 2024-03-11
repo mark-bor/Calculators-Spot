@@ -1,0 +1,68 @@
+<main class="main quadratic-equation">
+    <h1 class="title">Quadratic Equation</h1>
+
+    <p class="formula">{{a}}x<sup>2</sup> + {{b}}x + {{c}} = 0</p>
+    
+    <div class="input-fields">
+        <label for="a">
+            <input
+                id="a"
+                class="input"
+                type="number"
+                name="a"
+                placeholder="a"
+                [value]="a"
+                (input)="setA($event)"
+            >
+        </label>
+        <label for="b">
+            <input
+                id="b"
+                class="input"
+                type="number"
+                name="b"
+                placeholder="b"
+                [value]="b"
+                (input)="setB($event)"
+            >
+        </label>
+        <label for="c">
+            <input
+                id="c"
+                class="input"
+                type="number"
+                name="c"
+                placeholder="c"
+                [value]="c"
+                (input)="setC($event)"
+            >
+        </label>
+    </div>
+
+    <div class="buttons">
+        <button 
+            class="button reset"
+            (click)="reset()"
+        >Reset</button>
+        <button 
+            class="button calculate"
+            (click)="calculate()"
+        >Calculate</button>
+    </div>
+
+    <div class="results">
+        @if (x1!=undefined && x2!=undefined) {
+            @if (x1==='NaN' && x2==='NaN') {
+                <p>Result cannot be calculated.</p>
+                <p>{{'Discriminant < 0 or a = 0.'}}</p>
+            }
+            @else if (x1===x2) {
+                <p class="result">x = {{ x1 }}</p>
+            }
+            @else if (x1!=x2) {
+                <p class="result">x1 = {{ x1 }}</p>
+                <p class="result">x2 = {{ x2 }}</p>
+            }
+        }
+    </div>
+</main>
