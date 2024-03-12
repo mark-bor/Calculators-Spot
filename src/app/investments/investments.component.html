@@ -1,0 +1,123 @@
+<main class="main investments">
+    <h1 class="title">Investments</h1>
+
+    <p class="data">
+        <span>Starting amount = {{ amount }}</span>
+        <span>Interest = {{ interest ? interest+'%' : '?' }}</span>
+        <span>{{ upperFirstLetter(pointName) }}s = {{ pointsNumber }}</span>
+        <span>Additional amount every {{ pointName }} = {{ additionalAmount }}</span>
+        <span>Result = {{ result }}</span>
+    </p>
+
+    <div class="points-name-list">
+        <label class="point-name" for="year">
+            <input
+                id="year"
+                type="radio"
+                name="points-name" 
+                [checked]="pointName==='year'"
+                (change)="setPointName('year')"
+            />
+            <span>Years</span>
+        </label>
+        <label class="point-name" for="month">
+            <input
+                id="month"
+                type="radio"
+                name="points-name" 
+                [checked]="pointName==='month'"
+                (change)="setPointName('month')"
+            />
+            <span>Months</span>
+        </label>
+    </div>
+
+    <div class="input-fields">
+        <label for="amount">
+            <input
+                id="amount"
+                class="input"
+                type="number"
+                name="amount"
+                placeholder="amount"
+                [value]="amount"
+                (input)="setAmount($event)"
+            >
+        </label>
+        <label for="interest">
+            <input
+                id="interest"
+                class="input"
+                type="number"
+                name="interest"
+                placeholder="interest"
+                [value]="interest"
+                (input)="setInterest($event)"
+            >
+        </label>
+        <label for="pointsNumber">
+            <input
+                id="pointsNumber"
+                class="input"
+                type="number"
+                name="pointsNumber"
+                placeholder="points number"
+                [value]="pointsNumber"
+                (input)="setPointsNumber($event)"
+            >
+        </label>
+        <label for="additionalAmount">
+            <input
+                id="additionalAmount"
+                class="input"
+                type="number"
+                name="additionalAmount"
+                placeholder="additional amount"
+                [value]="additionalAmount"
+                (input)="setAdditionalAmount($event)"
+            >
+        </label>
+        <!-- <label for="result">
+            <input
+                id="result"
+                class="input"
+                type="number"
+                name="result"
+                placeholder="result"
+                [value]="result"
+                (input)="setResult($event)"
+            >
+        </label> -->
+    </div>
+
+    <div class="buttons">
+        <button 
+            class="button reset"
+            (click)="reset()"
+        >Reset</button>
+        <button 
+            class="button calculate"
+            (click)="calculate()"
+        >Calculate</button>
+    </div>
+
+    @if (points.length>0) {
+        <button
+            class="toggle-diagram"
+            (click)="diagram=!diagram"
+        >{{ diagram ? 'Hide diagram' : 'Show diagram' }}</button>
+    }
+
+    @if (diagram) {
+        <ul class="diagram">
+            @for (p of points; track p) {
+                <li 
+                    class="point"
+                    [style]="{width: ((100 * p) / points[points.length-1]).toFixed(1) + '%'}"
+                >
+                    <span>{{ p }}</span>
+                </li>
+            }
+        </ul>
+    }
+</main>

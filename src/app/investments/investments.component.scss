@@ -1,0 +1,106 @@
+.investments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.data {
+    width: 300px;
+    margin-bottom: 30px;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+
+.points-name-list {
+    margin-bottom: 25px;
+    display: flex;
+    column-gap: 30px;
+
+    .point-name {
+        height: 26px;
+
+        display: flex;
+        align-items: center;
+        column-gap: 7px;
+
+        span {
+            line-height: 1.3em;
+        }
+    }
+}
+
+.input-fields {
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+.input {
+    width: 160px;
+    height: 30px;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    outline: none;
+
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.buttons {
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+}
+// .button {
+
+// }
+
+.toggle-diagram {
+    padding: 3px 5px;
+    background: none;
+    border: none;
+}
+
+.diagram {
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 7px;
+    
+    .point {
+        height: 26px;
+        
+        display: inline-flex;
+        align-items: center;
+        
+        background-color: aqua;
+        border-radius: 5px;
+        
+        span {
+            padding: 0 5px;
+            font-size: 15px;
+        }
+    }
+}
