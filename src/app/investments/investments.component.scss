@@ -24,9 +24,11 @@
 }
 
 .points-name-list {
+    width: 200px;
     margin-bottom: 25px;
+
     display: flex;
-    column-gap: 30px;
+    justify-content: space-between;
 
     .point-name {
         height: 26px;
@@ -34,6 +36,22 @@
         display: flex;
         align-items: center;
         column-gap: 7px;
+
+        input {
+            display: none;
+        }
+        .input-name {
+            display: block;
+            width: 15px;
+            height: 15px;
+
+            border: 1px solid var(--color-t-1);
+            border-radius: 50%;
+        }
+        input:checked + .input-name {
+            border: none;
+            background-color: var(--color-1);
+        }
 
         span {
             line-height: 1.3em;
@@ -50,13 +68,15 @@
     row-gap: 15px;
 }
 .input {
-    width: 160px;
+    width: 200px;
     height: 30px;
     
     display: inline-flex;
     justify-content: center;
     align-items: center;
 
+    border: 1px solid var(--color-t-1);
+    border-radius: 5px;
     outline: none;
 
     text-align: center;
@@ -65,15 +85,24 @@
 }
 
 .buttons {
+    width: 200px;
     margin-bottom: 20px;
 
-    display: flex;
-    justify-content: center;
-    column-gap: 25px;
+    display: inline-flex;
+    justify-content: space-between;
 }
-// .button {
-
-// }
+.button {
+    padding: 3px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button.reset {
+    border: 2px solid var(--color-1);
+}
+.button.calculate {
+    background-color: var(--color-1);
+    color: var(--color-bg);
+}
 
 .toggle-diagram {
     padding: 3px 5px;

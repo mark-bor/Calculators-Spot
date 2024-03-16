@@ -10,13 +10,13 @@ import { PythagoreanTheoremComponent } from './pythagorean-theorem/pythagorean-t
 import { CircleComponent } from './circle/circle.component';
 
 export const routes: Routes = [
-    {path: '', component: HomeComponent, title: 'Home page'},
+    {path: '', component: HomeComponent, title: 'Calculators Spot'},
 
-    {path: 'exchange-rate', component: ExchangeRateComponent, title: 'Exchange rate page'},
-    {path: 'percent', component: PercentComponent, title: 'Investment page'},
-    {path: 'investments', component: InvestmentsComponent, title: 'Investments page'},
+    {path: 'exchange-rate', component: ExchangeRateComponent, title: 'Calculators Spot | Exchange Rate'},
+    {path: 'percent', component: PercentComponent, title: 'Calculators Spot | Investment'},
+    {path: 'investments', component: InvestmentsComponent, title: 'Calculators Spot | Investments'},
 
-    {path: 'quadratic-equation', component: QuadraticEquationComponent, title: 'Quadratic equation page'},
-    {path: 'pythagorean-theorem', component: PythagoreanTheoremComponent, title: 'Pythagorean theorem page'},
-    {path: 'circle', component: CircleComponent, title: 'Circle page'},
+    {path: 'quadratic-equation', component: QuadraticEquationComponent, title: 'Calculators Spot | Quadratic Equation'},
+    {path: 'pythagorean-theorem', component: PythagoreanTheoremComponent, title: 'Calculators Spot | Pythagorean Theorem'},
+    {path: 'circle', component: CircleComponent, title: 'Calculators Spot | Circle'},
 ];

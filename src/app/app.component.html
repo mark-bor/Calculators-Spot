@@ -1,6 +1,6 @@
 <div class="app-container">
   <header class="header">
-    <a href="/">Home</a>
+    <a class="home-page" href="/">Home</a>
 
     <button 
       class="menu-button"
@@ -19,7 +19,7 @@
           @for (link of section.links; track link) {
             <li class="link-wrap">
               <a 
-                class="link" 
+                [class]="['link', getPath(link) ? 'active' : '']" 
                 [href]="'/'+link"
                 (click)="setMenu(false)"
               >{{ upperFirstLetter(link) }}</a>

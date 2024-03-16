@@ -9,8 +9,7 @@
 }
 
 .providers {
-    width: 236px;
-    margin: 0 auto;
+    width: 250px;
     margin-bottom: 25px;
 
     display: inline-flex;
@@ -22,8 +21,21 @@
         align-items: center;
         column-gap: 5px;
 
-        // .input-provider {
-        // }
+        input {
+            display: none;
+        }
+        .input-provider {
+            display: block;
+            width: 15px;
+            height: 15px;
+
+            border: 1px solid var(--color-t-1);
+            border-radius: 50%;
+        }
+        input:checked + .input-provider {
+            border: none;
+            background-color: var(--color-1);
+        }
 
         span {
             line-height: 1.2em;
@@ -32,22 +44,40 @@
 }
 
 .select-container {
-    height: 26px;
+    width: 250px;
+    height: 30px;
     margin-bottom: 20px;
 
     display: flex;
     align-items: center;
-    column-gap: 10px;
+
+    background-color: var(--color-1);
+    border-radius: 5px;
+    overflow: hidden;
     
     .currency {
+        width: 70px;
         height: 100%;
+        padding: 0 5px;
+
+        z-index: 1;
+        border: none;
         outline: none;
+        background-color: inherit;
+
+        color: var(--color-bg);
     }
 
     .amount {
-        // width: 100px;
+        width: 180px;
         height: 100%;
+        padding: 0;
+
+        z-index: 1;
+        border: 1px solid var(--color-1);
+        border-radius: 4px;
         outline: none;
+
         text-align: center;
     }
 }

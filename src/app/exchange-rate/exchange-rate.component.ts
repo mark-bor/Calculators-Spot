@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './exchange-rate.component.scss'
 })
 export class ExchangeRateComponent {
-  providers: string[] = ['cledara', 'unknown', 'api-ninjas'];
+  providers: string[] = ['cledara', 'currency exchange', 'api-ninjas'];
   currencies:  string[] = ['USD', 'EUR', 'GBP', 'CNY', 'UAH', 'PLN'];
 
   provider: string = 'cledara';
@@ -102,7 +102,7 @@ export class ExchangeRateComponent {
         };
         break;
         
-      case 'unknown':
+      case 'currency exchange':
         this.url = `https://currency-exchange.p.rapidapi.com/exchange?from=${from}&to=${to}&q=${amount}`;
         this.head = {
           method: 'GET',
@@ -135,7 +135,7 @@ export class ExchangeRateComponent {
         case 'cledara':
           result(res.result.toFixed(2));
           break;
-        case 'unknown':
+        case 'currency exchange':
           result(res.toFixed(2));
           break;
         case 'api-ninjas':

@@ -6,13 +6,13 @@
             <label [for]="p" class="provider">
                 <input 
                     [id]="p"
-                    class="input-provider"
                     type="radio"
                     name="provider"
                     [value]="p"
                     [checked]="p===provider"
                     (change)="setProvider($event)"
                 />
+                <span class="input-provider"></span>
                 <span>{{ p }}</span>
             </label>
         }

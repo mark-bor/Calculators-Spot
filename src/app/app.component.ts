@@ -16,7 +16,7 @@ type SectionData = {
 export class AppComponent {
   sections: SectionData[] = [
     {
-      section: 'Financial',
+      section: 'FINANTIAL',
       links: [
         'exchange-rate',
         'percent',
@@ -24,7 +24,7 @@ export class AppComponent {
       ]
     },
     {
-      section: 'Math',
+      section: 'MATH',
       links: [
         'quadratic-equation', 
         'pythagorean-theorem',
@@ -35,16 +35,21 @@ export class AppComponent {
   
   isMenu: boolean = false;
 
-  upperFirstLetter(word: string) {
+  upperFirstLetter(word: string): string {
     const changedWord = word.split('-').join(' ');
     return changedWord.charAt(0).toUpperCase() + changedWord.slice(1)
   }
 
-  toggleMenu() {
+  getPath(name: string): boolean {
+    const path = window.location.pathname;
+    return `/${name}`===path;
+  }
+
+  toggleMenu(): void {
     this.isMenu = !this.isMenu;
   }
 
-  setMenu(param: boolean) {
+  setMenu(param: boolean): void {
     this.isMenu = param;
   }
 }

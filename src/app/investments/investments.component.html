@@ -18,6 +18,7 @@
                 [checked]="pointName==='year'"
                 (change)="setPointName('year')"
             />
+            <span class="input-name"></span>
             <span>Years</span>
         </label>
         <label class="point-name" for="month">
@@ -28,6 +29,7 @@
                 [checked]="pointName==='month'"
                 (change)="setPointName('month')"
             />
+            <span class="input-name"></span>
             <span>Months</span>
         </label>
     </div>
@@ -39,7 +41,7 @@
                 class="input"
                 type="number"
                 name="amount"
-                placeholder="amount"
+                placeholder="starting amount"
                 [value]="amount"
                 (input)="setAmount($event)"
             >
@@ -61,7 +63,7 @@
                 class="input"
                 type="number"
                 name="pointsNumber"
-                placeholder="points number"
+                [placeholder]="pointName+' number'"
                 [value]="pointsNumber"
                 (input)="setPointsNumber($event)"
             >
